@@ -13,7 +13,9 @@
         }
         .nineties-theme {
             font-family: 'Comic Sans MS', cursive, sans-serif;
-            background: url('https://www.transparenttextures.com/patterns/cubes.png');
+            background-color: #FFD700; /* Neon yellow background color */
+            background-image: url('https://www.transparenttextures.com/patterns/cubes.png'); /* The pattern */
+            background-repeat: repeat; /* Ensure the pattern tiles correctly */
             color: #FF00FF;
         }
         .nineties-theme h1, .nineties-theme h2 {
@@ -51,10 +53,51 @@
         .nineties-theme .blink {
             animation: blink 1s step-start infinite;
         }
+        /* Normal theme (default styling remains unchanged) */
+        .skill-bar {
+            transition: width 1s ease-out;
+            background-color: #4CAF50; /* Default modern color */
+            height: 12px;
+            border-radius: 8px;
+        }
+
+        /* 90s Theme Styles for the skill bars */
+        .nineties-theme .skill {
+            background-color: #FFD700; /* Bright background for the skill container */
+            border: 2px solid #FF00FF; /* Bold neon border */
+            padding: 5px;
+            font-family: 'Courier New', Courier, monospace; /* Classic 90s font */
+        }
+
+        .nineties-theme .skill-bar {
+            background-color: #FF4500; /* Bold color for the skill level */
+            height: 20px;
+            border: 2px solid #0000FF; /* Adding bold borders for pixelated feel */
+            border-radius: 0; /* No rounded edges in 90s */
+            box-shadow: none; /* Remove modern shadows */
+        }
+
+        .nineties-theme .skill-bar-inner {
+            width: 100%;
+            animation: none; /* No smooth animation */
+            transition: none;
+        }
+
+        /* Percentage text inside bar */
+        .nineties-theme .skill span {
+            color: #00FF00; /* Neon text */
+            font-size: 14px;
+        }
+        .nineties-theme .header {
+            background-color: #FFD700; /* Bright background for the header */
+            border: 2px solid #FF00FF; /* Bold neon border */
+            padding: 10px;
+            font-family: 'Courier New', Courier, monospace; /* Classic 90s font */
+        }
         </style>
     </head>
     <body class="bg-gradient-to-br from-gray-50 to-gray-100 text-gray-800">
-        <header class="bg-gradient-to-r from-blue-500 to-purple-600 py-20 text-white relative">
+        <header class="bg-gradient-to-r from-blue-500 to-purple-600 py-20 text-white relative header">
             <div class="max-w-4xl mx-auto px-6">
                 <h1 class="text-6xl font-bold mb-4 animate-fade-in-down">🤓 Muneeb Shahid</h1>
                 <p class="text-3xl text-gray-200 mb-6 animate-fade-in-up blink">Software Engineer & Founder</p>
@@ -185,7 +228,7 @@
                 </div>
             </section>
             <!-- Skills -->
-            <section class="mb-16">
+            <section class="mb-16 skill group">
                 <h2 class="text-3xl font-semibold text-gray-900 mb-8 pb-2 border-b-2 border-gray-300 blink">Core Competencies</h2>
                 <div class="bg-white rounded-lg shadow-md p-6 transition duration-300 hover:shadow-lg mb-8">
                     <h3 class="text-2xl font-semibold text-gray-800 mb-4">Professional Expertise</h3>
