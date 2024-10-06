@@ -11,13 +11,35 @@
         body {
             font-family: 'Poppins', sans-serif;
         }
+        .nineties-theme {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(90deg, #FFD700, #FF6347, #4B0082);
+            color: #000;
+        }
+        .nineties-theme h1, .nineties-theme h2 {
+            text-shadow: 2px 2px #ff00ff;
+        }
+        .nineties-theme .nineties-button {
+            background-color: #FF4500;
+            border: 2px solid #000;
+            box-shadow: 4px 4px #000;
+        }
+        .nineties-theme a {
+            color: #0000EE;
+            text-decoration: underline;
+        }
         </style>
     </head>
     <body class="bg-gradient-to-br from-gray-50 to-gray-100 text-gray-800">
-        <header class="bg-gradient-to-r from-blue-500 to-purple-600 py-20 text-white">
+        <header class="bg-gradient-to-r from-blue-500 to-purple-600 py-20 text-white relative">
             <div class="max-w-4xl mx-auto px-6">
                 <h1 class="text-6xl font-bold mb-4 animate-fade-in-down">🤓 Muneeb Shahid</h1>
                 <p class="text-3xl text-gray-200 mb-6 animate-fade-in-up">Software Engineer & Founder</p>
+                <!-- "Take me to the 90s" Button -->
+                <button id="themeToggleBtn"
+                        class="nineties-button px-4 py-2 bg-white text-black font-bold rounded-md transition duration-300 hover:bg-gray-100 absolute top-5 right-5">
+                    Take me to the 90s
+                </button>
                 <div class="mb-8 animate-fade-in-up delay-200">
                     <p class="text-2xl text-gray-300 italic">
                         "If at first you don't succeed, blame it on the cache. Then check your code."
@@ -27,6 +49,7 @@
                         <span class="text-xl font-bold ml-2">- Muneeb Shahid</span>
                     </p>
                 </div>
+                <!-- Contact Icons -->
                 <div class="flex space-x-6 text-gray-200 animate-fade-in-up delay-300">
                     <a href="mailto:muneebshahid5@gmail.com"
                        class="flex items-center hover:text-white transition duration-300 transform hover:scale-105">
@@ -240,27 +263,17 @@
     class="hover:text-gray-200 transition duration-300">Grocera.de</a>
             </p>
         </footer>
-        <style>
-            @keyframes fadeInDown {
-                from { opacity: 0; transform: translateY(-20px); }
-                to { opacity: 1; transform: translateY(0); }
-            }
-            @keyframes fadeInUp {
-                from { opacity: 0; transform: translateY(20px); }
-                to { opacity: 1; transform: translateY(0); }
-            }
-            .animate-fade-in-down {
-                animation: fadeInDown 0.5s ease-out;
-            }
-            .animate-fade-in-up {
-                animation: fadeInUp 0.5s ease-out;
-            }
-            .delay-200 {
-                animation-delay: 0.2s;
-            }
-            .delay-300 {
-                animation-delay: 0.3s;
-            }
-        </style>
+        <!-- JavaScript for theme toggle -->
+        <script>
+            const button = document.getElementById('themeToggleBtn');
+            button.addEventListener('click', function() {
+                document.body.classList.toggle('nineties-theme');
+                if (document.body.classList.contains('nineties-theme')) {
+                    button.textContent = 'Take me back to the 2020s';
+                } else {
+                    button.textContent = 'Take me to the 90s';
+                }
+            });
+        </script>
     </body>
 </html>
