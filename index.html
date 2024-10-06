@@ -13,20 +13,43 @@
         }
         .nineties-theme {
             font-family: 'Comic Sans MS', cursive, sans-serif;
-            background: linear-gradient(90deg, #FFD700, #FF6347, #4B0082);
-            color: #000;
+            background: url('https://www.transparenttextures.com/patterns/cubes.png');
+            color: #FF00FF;
         }
         .nineties-theme h1, .nineties-theme h2 {
-            text-shadow: 2px 2px #ff00ff;
+            text-shadow: 2px 2px #00FF00;
         }
         .nineties-theme .nineties-button {
             background-color: #FF4500;
-            border: 2px solid #000;
-            box-shadow: 4px 4px #000;
+            border: 5px solid #0000FF;
+            box-shadow: 6px 6px #FFD700;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            font-size: 16px;
         }
         .nineties-theme a {
-            color: #0000EE;
-            text-decoration: underline;
+            color: #00ff2a;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .nineties-theme a:hover {
+            background-color: #FFD700;
+            color: #FF4500;
+        }
+        .nineties-theme ul {
+            list-style-type: square;
+            color: #00FF00;
+        }
+        .nineties-theme section {
+            border: 4px dashed #FF4500;
+            padding: 20px;
+            background-color: #FFD700;
+        }
+        /* Blinking effect for retro feel */
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+        .nineties-theme .blink {
+            animation: blink 1s step-start infinite;
         }
         </style>
     </head>
@@ -34,7 +57,7 @@
         <header class="bg-gradient-to-r from-blue-500 to-purple-600 py-20 text-white relative">
             <div class="max-w-4xl mx-auto px-6">
                 <h1 class="text-6xl font-bold mb-4 animate-fade-in-down">🤓 Muneeb Shahid</h1>
-                <p class="text-3xl text-gray-200 mb-6 animate-fade-in-up">Software Engineer & Founder</p>
+                <p class="text-3xl text-gray-200 mb-6 animate-fade-in-up blink">Software Engineer & Founder</p>
                 <!-- "Take me to the 90s" Button -->
                 <button id="themeToggleBtn"
                         class="nineties-button px-4 py-2 bg-white text-black font-bold rounded-md transition duration-300 hover:bg-gray-100 absolute top-5 right-5">
@@ -92,7 +115,7 @@
         <main class="max-w-4xl mx-auto py-16 px-6">
             <!-- Work Experience -->
             <section class="mb-16">
-                <h2 class="text-3xl font-semibold text-gray-900 mb-8 pb-2 border-b-2 border-gray-300">Work Experience</h2>
+                <h2 class="text-3xl font-semibold text-gray-900 mb-8 pb-2 border-b-2 border-gray-300 blink">Work Experience</h2>
                 <div class="space-y-12">
                     <div class="bg-white rounded-lg shadow-md p-6 transition duration-300 hover:shadow-lg">
                         <h3 class="text-2xl font-bold text-gray-800 mb-2">
@@ -163,7 +186,7 @@
             </section>
             <!-- Skills -->
             <section class="mb-16">
-                <h2 class="text-3xl font-semibold text-gray-900 mb-8 pb-2 border-b-2 border-gray-300">Core Competencies</h2>
+                <h2 class="text-3xl font-semibold text-gray-900 mb-8 pb-2 border-b-2 border-gray-300 blink">Core Competencies</h2>
                 <div class="bg-white rounded-lg shadow-md p-6 transition duration-300 hover:shadow-lg mb-8">
                     <h3 class="text-2xl font-semibold text-gray-800 mb-4">Professional Expertise</h3>
                     <div class="space-y-6">
@@ -224,7 +247,7 @@
                     <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-700">
                         <li class="flex items-center space-x-2">
                             <span class="text-2xl">🌐</span>
-                            <span>Full-Stack Development: FastAPI, Django, React</span>
+                            <span>Full-Stack Development: FastAPI, Django, HTMX, Tailwind, Postgres, Java</span>
                         </li>
                         <li class="flex items-center space-x-2">
                             <span class="text-2xl">📊</span>
@@ -247,7 +270,7 @@
             </section>
             <!-- Education -->
             <section>
-                <h2 class="text-3xl font-semibold text-gray-900 mb-8 pb-2 border-b-2 border-gray-300">Education</h2>
+                <h2 class="text-3xl font-semibold text-gray-900 mb-8 pb-2 border-b-2 border-gray-300 blink">Education</h2>
                 <div class="bg-white rounded-lg shadow-md p-6 transition duration-300 hover:shadow-lg">
                     <h3 class="text-2xl font-bold text-gray-800 mb-2">MSc. Computer Science</h3>
                     <p class="text-sm text-gray-500 mb-2">University of Freiburg | Nov 2017</p>
@@ -260,7 +283,7 @@
             <p>
                 &copy; 2024 Muneeb Shahid | <a href="https://grocera.de"
     target="_blank"
-    class="hover:text-gray-200 transition duration-300">Grocera.de</a>
+    class="hover:text-gray-200 transition duration-300 blink">Grocera.de</a>
             </p>
         </footer>
         <!-- JavaScript for theme toggle -->
